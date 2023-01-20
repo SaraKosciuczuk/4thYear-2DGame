@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TextCollected : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public TextMeshProUGUI textCollected;
+    int mushroomCount;
+
+    private void OnEnable()
     {
-        
+        PickupMushroom.OnMushroomCollected += IncrementMushroomCount;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        PickupMushroom.OnMushroomCollected -= IncrementMushroomCount;
+    }
+
+    public void IncrementMushroomCount()
+    {
+        mushroomCount++;
+        textCollected.text = $"Mushrooms Collected: {mushroomCount}";
     }
 }
