@@ -1,19 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PickupMushroom : MonoBehaviour, Collectable
 {
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            Destroy(gameObject);
-        }
-    }
+    public static event Action OnMushroomCollected;
 
     public void Collect()
     {
+        OnMushroomCollected?.Invoke();
+        Destroy(gameObject);
         Debug.Log("You collected a mushroom");
     }
 }
