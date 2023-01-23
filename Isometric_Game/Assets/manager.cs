@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using System;
+
+public class manager : MonoBehaviour
+{
+    public static manager instance;
+
+    public Text mushroomPickedUp;
+    int mushroomScore = 0;
+
+    public GameObject player;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    void Start()
+    {
+        mushroomPickedUp.text = mushroomScore.ToString() + " Mushrooms Collected";
+    }
+
+    public void AddMushroom()
+    {
+        mushroomScore += 1;
+        mushroomPickedUp.text = mushroomScore.ToString() + " Mushrooms Collected";
+    } 
+}

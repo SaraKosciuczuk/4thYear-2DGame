@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
+using Unity.VisualScripting;
 
 public class Collector : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Collectable collectable = collision.GetComponent<Collectable>();
-        if(collectable != null)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            collectable.Collect();
+            this.gameObject.SetActive(false);
+            manager.instance.AddMushroom();
         }
     }
 }
