@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 403485251}
   - component: {fileID: 403485250}
   - component: {fileID: 403485254}
+  - component: {fileID: 403485255}
   - component: {fileID: 403485253}
   m_Layer: 0
   m_Name: EnemyOne
@@ -338,6 +339,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32482147, y: 1}
   m_EdgeRadius: 0
+--- !u!58 &403485255
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403485249}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,10 +1592,10 @@ GameObject:
   m_Component:
   - component: {fileID: 727303389}
   - component: {fileID: 727303388}
-  - component: {fileID: 727303386}
   - component: {fileID: 727303391}
   - component: {fileID: 727303394}
   - component: {fileID: 727303393}
+  - component: {fileID: 727303386}
   - component: {fileID: 727303395}
   m_Layer: 3
   m_Name: Player
@@ -1601,6 +1618,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 727303395}
   runSpeed: 40
+  maxHealth: 3
+  currentHealth: 0
 --- !u!212 &727303388
 SpriteRenderer:
   m_ObjectHideFlags: 0

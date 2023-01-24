@@ -8,8 +8,6 @@ public class EnemyBehaviour : MonoBehaviour
 
     Rigidbody2D enemyBody;
 
-    //bool isFacingRight;
-
     // Start is called before the first frame update
     void Start()
     {

@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //public float moveSpeed = 5f;
-    //public Rigidbody2D rb;
-    //Vector2 movement;
-
     public PlayerController controller;
 
     public float runSpeed = 40f;
@@ -15,12 +11,17 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMovement = 0f;
     bool jump = false;
 
+    public int maxHealth = 3;
+    public int currentHealth;
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        //movement.x = Input.GetAxisRaw("Horizontal");
-        //movement.y = Input.GetAxisRaw("Vertical");
-
         horizontalMovement = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         if (Input.GetButtonDown("Jump"))
@@ -31,10 +32,19 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Movement
-        //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
         controller.Move(horizontalMovement * Time.fixedDeltaTime, false, jump);
         jump = false;
+    }
+
+    void takeDamage(int amount)
+    {
+        currentHealth -= amount;
+
+        if(currentHealth <= 0)
+        {
+            // Dead
+            // Play death animation
+            // Show GameOver screen
+        }
     }
 }
