@@ -6,14 +6,15 @@ TagManager:
   tags:
   - Mushroom
   - EnemyOne
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
@@ -40,14 +41,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 3987735867
     locked: 0
-  - name: Middle
-    uniqueID: 3102336673
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Foreground
     uniqueID: 640109625
