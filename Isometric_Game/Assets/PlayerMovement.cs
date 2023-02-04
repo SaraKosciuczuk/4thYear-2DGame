@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,12 +12,9 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMovement = 0f;
     bool jump = false;
 
-    public int maxHealth = 3;
-    public int currentHealth;
-
     void Start()
     {
-        currentHealth = maxHealth;
+       
     }
 
     // Update is called once per frame
@@ -34,17 +32,5 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.Move(horizontalMovement * Time.fixedDeltaTime, false, jump);
         jump = false;
-    }
-
-    void takeDamage(int amount)
-    {
-        currentHealth -= amount;
-
-        if(currentHealth <= 0)
-        {
-            // Dead
-            // Play death animation
-            // Show GameOver screen
-        }
     }
 }
