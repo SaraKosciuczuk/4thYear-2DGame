@@ -2,19 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour
+public class EnemyOne : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
-
-    public int enemyHealth = 4;
-
+    public int enemyHealth = 100;
     Rigidbody2D enemyBody;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyBody = GetComponent<Rigidbody2D>();
-        enemyHealth = 4;
     }
 
     // Update is called once per frame
@@ -27,11 +24,6 @@ public class EnemyBehaviour : MonoBehaviour
         {
             enemyBody.velocity = new Vector2(-moveSpeed, 0f);
         }
-
-        if(enemyHealth <= 0)
-		{
-			this.gameObject.SetActive(false);
-		}
     }
 
     private bool isFacingRight()
@@ -44,12 +36,18 @@ public class EnemyBehaviour : MonoBehaviour
         transform.localScale = new Vector2(-(Mathf.Sign(enemyBody.velocity.x)), transform.localScale.y);
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void TakeDamage (int damage)
     {
-        if(collision.gameObject.CompareTag("PlayerCollider"))
+        enemyHealth -= damage;
+
+        if(enemyHealth <= 0)
         {
-            Debug.Log("collided, -1 health");
-            enemyHealth -= 1;
+            Die();
         }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }

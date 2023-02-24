@@ -19,12 +19,12 @@ public class manager : MonoBehaviour
 
     void Start()
     {
-        mushroomPickedUp.text = mushroomScore.ToString() + " Mushrooms Collected";
+        mushroomPickedUp.text = mushroomScore.ToString() + " Collected";
     }
 
     public void AddMushroom()
     {
         mushroomScore += 1;
-        mushroomPickedUp.text = mushroomScore.ToString() + " Mushrooms Collected";
+        mushroomPickedUp.text = mushroomScore.ToString() + " Collected";
     } 
 }
