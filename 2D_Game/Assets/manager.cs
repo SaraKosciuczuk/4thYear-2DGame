@@ -8,7 +8,7 @@ public class manager : MonoBehaviour
     public static manager instance;
 
     public Text mushroomPickedUp;
-    int mushroomScore = 0;
+    float mushroomScore = 0;
 
     public GameObject player;
 
@@ -24,7 +24,7 @@ public class manager : MonoBehaviour
 
     public void AddMushroom()
     {
-        mushroomScore += 1;
+        mushroomScore += 0.5f;
         mushroomPickedUp.text = mushroomScore.ToString() + " Collected";
     } 
 }
