@@ -33,7 +33,7 @@ public class EnemyOne : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        transform.localScale = new Vector2(-(Mathf.Sign(enemyBody.velocity.x)*3), transform.localScale.y);
+        transform.localScale = new Vector2(-(Mathf.Sign(enemyBody.velocity.x)*2), transform.localScale.y);
     }
 
     public void TakeDamage (int damage)
