@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyOne : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
-    public int enemyHealth = 100;
+    public int enemyHealth = 50;
     Rigidbody2D enemyBody;
 
     // Start is called before the first frame update
