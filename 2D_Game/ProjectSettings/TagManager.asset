@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - EnemyCollider
   - PlayerCollider
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

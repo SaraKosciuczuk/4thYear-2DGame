@@ -24,7 +24,7 @@ public class manager : MonoBehaviour
 
     public void AddMushroom()
     {
-        mushroomScore += 0.5f;
+        mushroomScore += 1f;
         mushroomPickedUp.text = mushroomScore.ToString() + " Collected";
     } 
 }

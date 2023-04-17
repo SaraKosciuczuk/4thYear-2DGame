@@ -4,26 +4,61 @@ using UnityEngine;
 
 public class EnemyOne : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 1f;
+    [SerializeField] float speed = 1f;
     public int enemyHealth = 50;
-    Rigidbody2D enemyBody;
+    Rigidbody2D rb;
+
+    int walkin = 1;
+    public GameObject walkingRightAnimation;
+    public GameObject walkingLeftAnimation;
 
     // Start is called before the first frame update
     void Start()
     {
-        enemyBody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isFacingRight())
+        
+        if(walkin == 1)
         {
-            enemyBody.velocity = new Vector2(moveSpeed, 0f);
-        }else
-        {
-            enemyBody.velocity = new Vector2(-moveSpeed, 0f);
+            StartCoroutine(walkingg());
         }
+
+        if(enemyHealth <= 0)
+        {
+            Die();
+        }
+
+        //if(isFacingRight())
+        //{
+            //rb.velocity = new Vector2(speed, 0f);
+        //}
+        //else
+        //{
+            //rb.velocity = new Vector2(-speed, 0f);
+        //}
+    }
+
+    IEnumerator walkingg()
+    {
+        walkin -= 1;
+        walkingLeftAnimation.gameObject.SetActive(false);
+        
+        rb.velocity = new Vector2(speed, 0f);
+        yield return new WaitForSeconds(3);
+
+        walkingRightAnimation.gameObject.SetActive(false);
+
+        walkingLeftAnimation.gameObject.SetActive(true);
+
+        rb.velocity = new Vector2(-speed, 0f);
+        yield return new WaitForSeconds(3);
+
+        walkin += 1;
+        walkingRightAnimation.gameObject.SetActive(true);
     }
 
     private bool isFacingRight()
@@ -31,18 +66,26 @@ public class EnemyOne : MonoBehaviour
         return transform.localScale.x > Mathf.Epsilon;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        transform.localScale = new Vector2(-(Mathf.Sign(enemyBody.velocity.x)*2), transform.localScale.y);
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+        //transform.localScale = new Vector2(-(Mathf.Sign(rb.velocity.x)), transform.localScale.y * 2);
+    //}
 
-    public void TakeDamage (int damage)
-    {
-        enemyHealth -= damage;
+    //public void TakeDamage (int damage)
+    //{
+        //enemyHealth -= damage;
 
-        if(enemyHealth <= 0)
+        //if(enemyHealth <= 0)
+        //{
+            //Die();
+        //}
+    //}
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("PlayerBullet"))
         {
-            Die();
+            enemyHealth -= 1;
         }
     }
 
@@ -50,4 +93,5 @@ public class EnemyOne : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    
 }
