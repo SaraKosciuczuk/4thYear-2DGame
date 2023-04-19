@@ -8,9 +8,10 @@ public class manager : MonoBehaviour
     public static manager instance;
 
     public Text mushroomPickedUp;
-    float mushroomScore = 0;
+    public float mushroomScore = 0;
 
-    public GameObject player;
+    public GameObject door;
+    public GameObject doorTwo;
 
     private void Awake()
     {
@@ -22,9 +23,35 @@ public class manager : MonoBehaviour
         mushroomPickedUp.text = mushroomScore.ToString() + " Collected";
     }
 
+    void Update()
+    {
+        if(mushroomScore >= 5)
+        {
+            DoorOne();
+        }
+
+        if(mushroomScore >= 10)
+        {
+            DoorTwo();
+        }
+    }
+
     public void AddMushroom()
     {
         mushroomScore += 1f;
         mushroomPickedUp.text = mushroomScore.ToString() + " Collected";
+
+
     } 
+
+    public void DoorOne()
+    {
+        door.gameObject.SetActive(false);
+    }
+
+    public void DoorTwo()
+    {
+        door.gameObject.SetActive(false);
+    }
+
 }

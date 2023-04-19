@@ -15,9 +15,4 @@ public class CollisionController : MonoBehaviour
         tilemapRenderer.enabled = showCollision;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

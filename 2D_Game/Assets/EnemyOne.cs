@@ -31,15 +31,6 @@ public class EnemyOne : MonoBehaviour
         {
             Die();
         }
-
-        //if(isFacingRight())
-        //{
-            //rb.velocity = new Vector2(speed, 0f);
-        //}
-        //else
-        //{
-            //rb.velocity = new Vector2(-speed, 0f);
-        //}
     }
 
     IEnumerator walkingg()
@@ -65,21 +56,6 @@ public class EnemyOne : MonoBehaviour
     {
         return transform.localScale.x > Mathf.Epsilon;
     }
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-        //transform.localScale = new Vector2(-(Mathf.Sign(rb.velocity.x)), transform.localScale.y * 2);
-    //}
-
-    //public void TakeDamage (int damage)
-    //{
-        //enemyHealth -= damage;
-
-        //if(enemyHealth <= 0)
-        //{
-            //Die();
-        //}
-    //}
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
