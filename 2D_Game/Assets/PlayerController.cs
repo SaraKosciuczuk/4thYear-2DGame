@@ -120,7 +120,6 @@ public class PlayerController : MonoBehaviour
 
 		animator.SetBool("walking", move != 0f);
 
-		Debug.Log("Jumping: " + animator.GetBool("jumping"));
 	}
 
 	private void Flip()
