@@ -10,6 +10,7 @@ TagManager:
   - EnemyCollider
   - PlayerCollider
   - PlayerBullet
+  - EnemyDamager
   layers:
   - Default
   - TransparentFX

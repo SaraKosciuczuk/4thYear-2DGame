@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 
 	public int playerHealth = 6;
+	public float collisionCooldown = 1f;
+    private float lastCollisionTime = 0f;
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
@@ -109,10 +111,18 @@ public class PlayerController : MonoBehaviour
 
 	public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("EnemyCollider"))
+        if(collision.gameObject.CompareTag("EnemyCollider") && Time.time >= lastCollisionTime + collisionCooldown)
         {
             Debug.Log("collided, -1 health");
             playerHealth -= 1;
+			lastCollisionTime = Time.time;
+        }
+
+		if(collision.gameObject.CompareTag("EnemyDamager") && Time.time >= lastCollisionTime + collisionCooldown)
+        {
+            Debug.Log("collided, -1 health");
+            playerHealth -= 1;
+			lastCollisionTime = Time.time;
         }
     }
 }
