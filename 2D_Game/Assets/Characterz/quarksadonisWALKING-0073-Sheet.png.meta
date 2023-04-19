@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,7 +103,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: quarksadonisWALKING-0073-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1
+        width: 52
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 695310c4668842844b474ec8df8aa280
+      internalID: 1055093185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quarksadonisWALKING-0073-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 2
+        width: 52
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af2e56eae90ba6418eca9d8c0074b9e
+      internalID: -387405754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quarksadonisWALKING-0073-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7820771e551367046999419950a92d45
+      internalID: 1591627173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quarksadonisWALKING-0073-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1
+        width: 52
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b10f9d391da10449f61a5797abf034
+      internalID: 1940599596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quarksadonisWALKING-0073-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 1
+        width: 52
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a132a0c4a334d7418a96fcb6cfedf45
+      internalID: 1754617890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quarksadonisWALKING-0073-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 1
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae4fd9584c5a534ea37a185a0e7611d
+      internalID: -1344458975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quarksadonisWALKING-0073-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 1
+        width: 52
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9841c4cfcd298ff448810a92274d055d
+      internalID: 1592108207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +261,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      quarksadonisWALKING-0073-Sheet_3: 1940599596
+      quarksadonisWALKING-0073-Sheet_4: 1754617890
+      quarksadonisWALKING-0073-Sheet_1: -387405754
+      quarksadonisWALKING-0073-Sheet_0: 1055093185
+      quarksadonisWALKING-0073-Sheet_6: 1592108207
+      quarksadonisWALKING-0073-Sheet_2: 1591627173
+      quarksadonisWALKING-0073-Sheet_5: -1344458975
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

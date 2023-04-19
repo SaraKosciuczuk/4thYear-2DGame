@@ -7,6 +7,14 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
 
+    public AudioSource audioSource;
+    public AudioClip gunshot;
+
+    void Start() 
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -20,5 +28,6 @@ public class Weapon : MonoBehaviour
     {
         // Shooting logic
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        audioSource.PlayOneShot(gunshot);
     }
 }
