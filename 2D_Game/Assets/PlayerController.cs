@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
 		if(playerHealth <= 0)
 		{
 			this.gameObject.SetActive(false);
+			SceneManager.LoadScene("GameOVER");
 		}
 	}
 
